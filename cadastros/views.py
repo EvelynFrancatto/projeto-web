@@ -2,6 +2,7 @@ from django.forms.models import fields_for_model
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 
 from .models import Animal, Alimentacao, Higienizacao, Lugar
 
@@ -109,6 +110,20 @@ class LugarList(ListView):
     template_name = 'cadastros/listas/lugar.html'
 
 
+############# LOGIN #############
+
+
+class AnimalUpdateView(LoginRequiredMixin, UpdateView):
+    login_url = reverse_lazy('login')
+
+class AlimentacaoUpdateView(LoginRequiredMixin, UpdateView):
+    login_url = reverse_lazy('login')
+
+class HigienizacaoUpdateView(LoginRequiredMixin, UpdateView):
+    login_url = reverse_lazy('login')
+
+class LugarUpdateView(LoginRequiredMixin, UpdateView):
+    login_url = reverse_lazy('login')
 
 
 # Create your views here.

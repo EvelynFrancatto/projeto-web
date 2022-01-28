@@ -1,17 +1,21 @@
 {% extends 'paginas/modelo.html' %}
 
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+
+
+{% block conteudo %}
+<h2>AnimalDaily</h2>
+
+AnimalDaily é um app você consegue registrar todos os seus animais, com objetivo de facilitar a vida de quem
+cuida do seu animal enquanto vocẽ viaja/trabalha. Aleḿ disso, tem algumas dicas extras de como cuidar de alguns 
+animais milindrosos.
+
+{% endblock %}
+<!doctype html>
+<html>
+
 <body>
-    {% block conteudo %}
-    <h2>Página Inicial do Blog</h2>
-    {% endblock %}
+    <img src=”images/logo.png” alt=”some text” width=300 height=200>
 </body>
+
 </html>

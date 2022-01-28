@@ -1,0 +1,39 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+<h3>
+    Lista de usuários registrados 
+    <a href="% url 'cadastrar-usuario' %" class = btn btn-primary btn-sa>Adicionar usuário</a>
+    <hr>
+    <div class= "table-stripe" div>
+    <table class= "table table-stripe"> 
+       <tr>ID</tr>
+        <tr>Nome</tr>
+        <tr>Descrição</tr>
+        <tr>Opções</tr>
+
+        {% for campo in object_list%}
+        {% empat %}
+       <tr>
+        <td>  {{ usuario.pk}} </td>
+         <td> {{ usuario.nome}} </td>
+         <td> {{ usuario.email}} </td>  
+         <td> {{ usuario.senha}} </td>
+        <td>
+            <a href="{% url 'editar.usuario' 1 %}" class = "btn btn-warning btn-sa" title = "Editar">Editar</a>
+            <a href="{% url 'excluir.usuario' 1 %}" class = "btn btn-danger btn-sa"title = "Excluir">Excluir</a>
+            <a href="">Excluir</a>
+        </td>
+       </tr>
+       
+        <tr>
+            <td colspan="3" Nem usuário cadastrada</td>
+        </tr>
+
+
+        {% endfor %}
+
+
+    </table>
+</h3>
+{% endblock%}

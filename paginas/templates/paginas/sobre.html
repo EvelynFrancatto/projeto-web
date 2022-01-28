@@ -1,0 +1,47 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre</title>
+</head>
+<body>
+    {% block conteudo %}
+    
+    <h1 style = "text-align:center; color:red";> Cuidados com Porquinhos da India</h1>
+   
+        <h2>Por Evelyn Francatto</h2>
+    
+    <p>Saiba de todos os cuidados que se deve ter com porquinhos da india 
+        Os porquinhos da india são animais de estimação muito fofos e comilões. 
+        Como qualquer outro animal, os porquinhos também tem o seus cuidados.
+        Antes de adotar o animalzinho, é preciso reservar um 
+        cantinho onde ele  vai ficar, lembrando que é preciso ocorrer a circulação do vento.
+        O cercado deve ser forrado com o tecido soft ou com os 
+        granulados que evitam o odor do xixi.
+        
+        Já parou para pensar o que eles comem? Bom a alimentação do porquinho é composto por:
+        <ul>
+            <li>Legumes</li>
+            <li>Frutas</li>
+            <li>Ração</li>
+        </ul>
+        OBS: Deve ter cuidado com que legume, fruta se dá a ele, pois dependendo 
+        do que foi ingerido o porquinho passa a ter maus cheiros. 
+
+       
+       <img src="{% static 'imagens/diagramaclasses.png' %}" alt= "Diagrama de Classe" width="600" height="450" style="margin: 15px;"> 
+        <img src="{% static 'imagens/casodeuso.png' %}" alt= "Diagrama de Classe de uso" width="600" height="450" style="margin: 15px;"> 
+        
+
+        
+    </p>
+
+    {% endblock %}
+
+</body>
+</html>

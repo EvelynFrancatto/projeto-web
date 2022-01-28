@@ -1,0 +1,43 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+{% block conteudo %}
+
+<h3>
+    Lista de animais registrados 
+</h3>
+    <a href="{% url 'cadastrar-animal' %}" class=" btn btn-primary" >Adicionar animal</a>
+    <hr>
+    <table class="table table-striped"> 
+        <tr>
+            <th>ID</th>
+            <th>Raça</th>
+            <th>Opção</th>
+        </tr>
+      
+       
+
+        {% for animal in object_list %}
+    
+       <tr>
+        <td>  {{ animal.pk}} </td>
+         <td> {{ animal.raca}} </td>
+        
+        <td>
+            <a href="{% url 'editar-animal' animal.pk %}" class="btn btn-warning" title="Editar">Editar</a>
+            <a href="{% url 'excluir-animal' animal.pk %}" class="btn btn-danger" title="Excluir">Excluir</a>
+           
+        </td>
+       </tr>
+       {% empty %}
+        <tr>
+            <td colspan="100%" >  Nem animal cadastrada</td>
+        </tr>
+
+
+        {% endfor %}
+
+
+    </table>
+
+{% endblock %}

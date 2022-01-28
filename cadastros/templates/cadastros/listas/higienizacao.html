@@ -1,0 +1,47 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+{% block conteudo %}
+
+<h3>
+    Lista de higienização registrados 
+</h3>
+    <a href="{% url 'cadastrar-higienizacao' %}" class=" btn btn-primary" >Adicionar higienização</a>
+    <hr>
+    <table class="table table-striped"> 
+        <tr>
+            <th>ID</th>
+            <th>Limpeza</th>
+            <th>Cuidados</th>
+            <th>Animal</th>
+
+        </tr>
+      
+       
+
+        {% for higienizacao in object_list %}
+    
+       <tr>
+        <td>  {{ higienizacao.pk}} </td>
+         <td> {{ higienizacao.limpeza}} </td>
+         <td> {{ higienizacao.cuidados}} </td>
+         <td> {{ higienizacao.animal}} </td>
+
+        <td>
+            <a href="{% url 'editar-higienizacao' higienizacao.pk %}" class="btn btn-warning" title="Editar">Editar</a>
+            <a href="{% url 'excluir-higienizacao' higienizacao.pk %}" class="btn btn-danger" title="Excluir">Excluir</a>
+           
+        </td>
+       </tr>
+       {% empty %}
+        <tr>
+            <td colspan="100%" >  Nenhuma higienização cadastrada</td>
+        </tr>
+
+
+        {% endfor %}
+
+
+    </table>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'paginas/modelo.html' %}
+
+{% load static %}
+{% block conteudo %}
+
+<h3>
+    Lista de lugares registrados 
+</h3>
+    <a href="{% url 'cadastrar-lugar' %}" class=" btn btn-primary" >Adicionar lugar</a>
+    <hr>
+    <table class="table table-striped"> 
+        <tr>
+            <th>ID</th>
+            <th>Espaço</th>
+            <th>Brinquedos</th>
+            <th>Animal</th>
+        </tr>
+      
+       
+
+        {% for lugar in object_list %}
+    
+       <tr>
+        <td>  {{ lugar.pk}} </td>
+         <td> {{ lugar.espaco}} </td>
+         <td> {{ lugar.brinquedos}} </td>
+         <td> {{ lugar.animal}} </td>
+
+        
+        <td>
+            <a href="{% url 'editar-lugar' lugar.pk %}" class="btn btn-warning" title="Editar">Editar</a>
+            <a href="{% url 'excluir-lugar' lugar.pk %}" class="btn btn-danger" title="Excluir">Excluir</a>
+           
+        </td>
+       </tr>
+       {% empty %}
+        <tr>
+            <td colspan="100%" >  Nenhuma lugar cadastrada</td>
+        </tr>
+
+
+        {% endfor %}
+
+
+    </table>
+
+{% endblock %}
